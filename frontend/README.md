@@ -57,17 +57,6 @@ Errors: data sources throw `AppException`s (via `guardApi`); repositories turn t
 Auth: login stores the JWT (+ user JSON) in secure storage; the interceptor adds `Authorization: Bearer ...`;
 a 401 on a protected call signs the user out and the router redirects to `/login`.
 
-## Status
-| Feature | State |
-|---|---|
-| Login, session restore, logout, 401 handling | done |
-| Dashboard (stats, recent projects, upcoming deadlines) | done |
-| Projects (list, create, archive/unarchive, open -> its tasks) | done |
-| Tasks (list, filter, search, complete, delete) | done |
-| Create / edit task form (`TaskFormPage`) | TODO (stub with notes) |
-| Edit project name/description (use case + endpoint ready) | TODO (UI) |
-| Tasks pagination (first 50 shown) | TODO |
-
 ## Adding a feature
 1. `domain/`: entity, repository interface, use case(s)
 2. `data/`: model, remote data source (wrap calls in `guardApi`), repository impl (wrap in `runCatching`)
